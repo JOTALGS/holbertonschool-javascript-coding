@@ -5,7 +5,7 @@ const filePath = process.argv[2];
 
 try {
   const content = fs.readFile(filePath, 'utf-8');
-  console.log(content)
+  console.log(content);
 } catch (error) {
-  console.error(error)
+  console.error(error);
 }
