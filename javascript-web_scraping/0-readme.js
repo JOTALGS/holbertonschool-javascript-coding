@@ -3,9 +3,9 @@
 const fs = require('fs');
 const filePath = process.argv[2];
 
-try {
-  const content = fs.readFile(filePath, 'utf-8');
+fs.readFile(filePath, 'utf-8', (error, content) => {
+  if (error) {
+    console.error(error);
+  }
   console.log(content);
-} catch (error) {
-  console.error(error);
-}
+});
