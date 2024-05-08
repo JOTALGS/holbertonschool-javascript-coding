@@ -10,10 +10,10 @@ request(url, (error, response, body) => {
     console.error(error);
   }
 
-  try {
-    const content = fs.writeFile(filePath, body);
+  fs.writeFile(filePath, body, (content, error) => {
+    if (error) {
+      console.error(error);
+    }
     console.log(content);
-  } catch (error) {
-    console.error(error);
-  }
+  });
 });
